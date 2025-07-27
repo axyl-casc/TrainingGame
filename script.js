@@ -22,11 +22,18 @@ function dateStr(date) {
 
 function getPlanForDate(date) {
   const key = 'plan_' + dateStr(date);
-  let stored = localStorage.getItem(key);
-  if (stored) return JSON.parse(stored);
+  const stored = localStorage.getItem(key);
 
   const dayName = date.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
   const dayPlan = trainingPlan[dayName] || [];
+
+  if (stored) {
+    const parsed = JSON.parse(stored);
+    if (Array.isArray(parsed.objectives) && parsed.objectives.length === dayPlan.length) {
+      return parsed;
+    }
+  }
+
   const objectives = dayPlan.map(item => {
     if (Array.isArray(item)) {
       return item[Math.floor(Math.random() * item.length)];
