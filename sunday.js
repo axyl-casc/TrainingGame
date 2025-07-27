@@ -1,3 +1,3 @@
 export default [
-  "Rest day"
+  "Go to Gym"
 ];
