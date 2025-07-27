@@ -75,21 +75,22 @@ function saveProgress(date, arr) {
 function updateStreakIfNeeded() {
   const today = new Date();
   const yesterday = new Date(Date.now() - 864e5);
-  const yesterdayKey = 'progress_' + dateStr(yesterday);
+  const yesterdayStr = dateStr(yesterday);
+  const todayStr = dateStr(today);
+  const yesterdayKey = 'progress_' + yesterdayStr;
   const progress = JSON.parse(localStorage.getItem(yesterdayKey) || '[]');
   let streak = parseInt(localStorage.getItem('streak')) || 0;
   const last = localStorage.getItem('lastCompletionDate');
 
-  if (dateStr(yesterday) !== last) {
+  if (last && last !== todayStr && last !== yesterdayStr) {
+    // User missed at least a day
     streak = 0;
   }
 
   if (progress.length && progress.every(v => v)) {
-    if (last === dateStr(yesterday)) {
-      // streak already counted
-    } else {
+    if (last !== yesterdayStr && last !== todayStr) {
       streak += 1;
-      localStorage.setItem('lastCompletionDate', dateStr(yesterday));
+      localStorage.setItem('lastCompletionDate', yesterdayStr);
     }
   }
 
