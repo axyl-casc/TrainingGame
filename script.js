@@ -1,39 +1,19 @@
+import monday from './monday.js';
+import tuesday from './tuesday.js';
+import wednesday from './wednesday.js';
+import thursday from './thursday.js';
+import friday from './friday.js';
+import saturday from './saturday.js';
+import sunday from './sunday.js';
+
 const trainingPlan = {
-  monday: [
-    "Run 5km",
-    ["Swim 20 laps", "Cycle 10km"],
-    "Stretch for 15min"
-  ],
-  tuesday: [
-    "Yoga session",
-    ["Read a fitness article", "Watch a workout video"],
-    "Meditate for 10min"
-  ],
-  wednesday: [
-    "HIIT workout",
-    ["Push-ups", "Sit-ups"],
-    "Drink 2L of water"
-  ],
-  thursday: [
-    "Pilates",
-    ["Jump rope", "Light jog"],
-    "Healthy meal prep"
-  ],
-  friday: [
-    "Strength training",
-    ["Bench press", "Deadlift"],
-    "Protein shake"
-  ],
-  saturday: [
-    "Outdoor activity",
-    ["Hiking", "Kayaking"],
-    "Rest and recover"
-  ],
-  sunday: [
-    "Light stretching",
-    ["Family walk", "Easy bike ride"],
-    "Plan next week"
-  ]
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday,
+  sunday
 };
 
 function dateStr(date) {
