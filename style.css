@@ -49,6 +49,11 @@ body {
     font-weight: bold;
 }
 
+.countdown {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }

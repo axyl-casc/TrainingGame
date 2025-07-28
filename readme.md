@@ -8,6 +8,7 @@ This project is a small web app that helps you keep track of daily workout objec
 2. When prompted, enter your name to personalise the greeting.
 3. Tick each objective as you complete it. Your progress and daily streak are saved automatically.
 4. The side panels show yesterday's and tomorrow's plans so you can prepare.
+5. A live countdown displays the time remaining until the next day.
 
 No server is required – everything runs entirely in the browser. The streak counter resets if you skip a day.
 
