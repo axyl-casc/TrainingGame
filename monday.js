@@ -4,7 +4,9 @@ export default [
   "Easy tesuji set (15 min): quantity over difficulty",
   "Pimsleur lesson",
   "Read 1-dan challenge chapter",
-  "play piano",
-  "calisthenics workout",
-  "go for run"
+  [
+    "play piano",
+    "calisthenics workout",
+    "go for run"
+  ]
 ];
