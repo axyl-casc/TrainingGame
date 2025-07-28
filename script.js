@@ -128,6 +128,7 @@ function setup() {
   showSide('yesterday', new Date(Date.now() - 864e5));
   prepareTomorrow();
   showSide('tomorrow', new Date(Date.now() + 864e5));
+  startCountdown();
 
   function checkCompletion() {
     if (progress.every(v => v)) {
@@ -158,6 +159,26 @@ function showSide(elementId, date) {
 function prepareTomorrow() {
   const tomorrow = new Date(Date.now() + 864e5);
   getPlanForDate(tomorrow); // generate and store if not existing
+}
+
+function startCountdown() {
+  const el = document.getElementById('countdown');
+  if (!el) return;
+
+  function update() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(24, 0, 0, 0);
+    let diff = midnight - now;
+    if (diff < 0) diff = 0;
+    const hours = Math.floor(diff / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    el.textContent = `Next day in ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  update();
+  setInterval(update, 1000);
 }
 
 document.addEventListener('DOMContentLoaded', setup);
