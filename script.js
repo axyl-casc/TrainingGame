@@ -165,8 +165,16 @@ function startCountdown() {
   const el = document.getElementById('countdown');
   if (!el) return;
 
+  let currentDay = dateStr(new Date());
+
   function update() {
     const now = new Date();
+    const todayStr = dateStr(now);
+    if (todayStr !== currentDay) {
+      location.reload();
+      return;
+    }
+
     const midnight = new Date();
     midnight.setHours(24, 0, 0, 0);
     let diff = midnight - now;
