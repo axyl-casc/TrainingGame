@@ -1,4 +1,6 @@
 export default [
+  "Duolingo session",
+  "Pimsleur lesson",
   "Go to Gym",
   "Read 1-dan challenge chapter",
   [
